@@ -1,8 +1,8 @@
-const checkbox = document.getElementById('divStyle');
-console.log(checkbox);
+const checkbox = document.getElementById('divStyle'); //deklarerar varabeln checkbox med const och hämtar med id divStyle
+console.log(checkbox);//ger output om checkboxen till konsolen
 
 const textfields = document.querySelectorAll('.textField');
-console.log(textfields);
+console.log(textfields);//plural på grund av queryselectorall
 
 const button = document.getElementsByTagName('button');
 console.log(button);
@@ -15,16 +15,16 @@ const name = e.target.name;
 const value = e.target.value;
 const html = `<p>Fältet ${name} har värdet ${value}</p>`;
 divBox.insertAdjacentHTML('afterbegin', html);
+//Infogar den skapade HTML-strängen i div-elementet före dess befintliga innehåll. 
+//Eftersom vi använde afterbegin kommer alltid ny text läggas överst i rutan. 
 }
+
 
 //Event listener for the checkbox
 checkbox.addEventListener("change", function () {
     const colorInput = document.getElementById("color");
     const colorValue = colorInput.value;
-    divBox.style.backgroundColor = colorValue;
-    if (colorValue.trim() !== ""){
-        divBox.style.backgroundColor = colorValue;
-    }
+    divBox.style.backgroundColor = colorValue;//Fixar backgrundsfärgen på divbox till colorvalue
   });
   
   // Event listener for text fields
