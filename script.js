@@ -11,6 +11,7 @@ const divBox = document.getElementById('divBox');
 console.log(divBox);
 
 function handleEvent(e) {
+console.log("Avsändare:", e.target)
 const name = e.target.name;
 const value = e.target.value;
 const html = `<p>Fältet ${name} har värdet ${value}</p>`;
@@ -29,11 +30,11 @@ checkbox.addEventListener("change", function () {
   
   // Event listener for text fields
   textfields.forEach(function (textfield) {
-    textfield.addEventListener("input", handleEvent);
-    textfield.addEventListener("blur", handleEvent);
+    textfield.addEventListener("input", handleEvent);//lägger till funktionen handleevent för varje input användaren skriver för båda textfields
+    //textfield.addEventListener("blur", handleEvent);
   });
   
   // Event listener for the button
   button[0].addEventListener("click", function () {
     divBox.remove(); // Remove the div element
-  });
+  }); 
